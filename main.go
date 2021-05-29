@@ -1,27 +1,14 @@
 package main
 
 import (
-  "fmt"
   "os"
   "runtime"
-  "strings"
 )
 
-func isRoot() bool {
-  return os.Getuid() == 0
-}
-
-func success(s ...string)  {
-  fmt.Printf("\033[32m%s\033[0m", strings.Join(s, " "))
-}
-
-func err(s ...string)  {
-  fmt.Printf("\033[31m%s\033[0m", strings.Join(s, " "))
-}
-
-func info(s ...string)  {
-  fmt.Printf("\033[34m%s\033[0m", strings.Join(s, " "))
-}
+var (
+	shadeRepo = "https://github.com/shade-linux/buildscripts/"
+	shadeDir = "/usr/local/shade/" // explicit `/` at the end is crucial
+)
 
 func main() {
   if !(runtime.GOOS == "darwin" || runtime.GOOS == "linux") {

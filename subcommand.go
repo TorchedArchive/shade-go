@@ -8,23 +8,26 @@ import (
   "strings"
 )
 
-func rev(s string) (string){
-  return "\033[7m" + s + "\033[0m";
-}
-
-func checkRoot() {
-  if !isRoot() {
-    err("Shade must be ran as root")
-    os.Exit(1)
-  }
-}
-
 func help() {
 	// TODO
 	os.Exit(0)
 }
 
 func setup()  {
+  checkRoot()
+
+  info("Starting setup")
+  setupDirs := []string{"log", "cache", "bin", "include", "lib", "share"}
+
+  for _, curdir := range setupDirs {
+    os.MkdirAll(shadeDir + curdir, 0755)
+  }
+
+  run("git clone " + shadeRepo + " " + shadeDir + "main")
+  success("Setup done!")
+}
+
+func install(s []string) {
 	// TODO
 	checkRoot()
 }
