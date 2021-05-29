@@ -1,5 +1,3 @@
-module shade-go
+module shade
 
 go 1.16
-
-require github.com/gookit/color v1.4.2
