@@ -12,50 +12,44 @@ func rev(s string) (string){
   return "\033[7m" + s + "\033[0m";
 }
 
-func help(){
+func checkRoot() {
+  if !isRoot() {
+    err("Shade must be ran as root")
+    os.Exit(1)
+  }
+}
+
+func help() {
+	// TODO
+	os.Exit(0)
 }
 
 func setup()  {
-  if !(isRoot()){
-    error("Shade must be run as a root user")
-    os.Exit(0)
-  }
-
+	// TODO
+	checkRoot()
 }
 
-func install(s []string){
-  if !(isRoot()){
-    error("Shade must be run as a root user")
-    os.Exit(0)
-  }
-
+func install(s []string) {
+	// TODO
+	checkRoot()
 }
 
-func uninstall(s []string){
-  if !(isRoot()){
-    error("Shade must be run as a root user")
-    os.Exit(0)
-  }
-
+func uninstall(s []string) {
+	// TODO
+	checkRoot()
 }
 
-func upgrade(s []string){
-  if !(isRoot()){
-    error("Shade must be run as a root user")
-    os.Exit(0)
-  }
-
+func upgrade(s []string) {
+	// TODO
+	checkRoot()
 }
 
-func update(){
-  if !(isRoot()){
-    error("Shade must be run as a root user")
-    os.Exit(0)
-  }
-
+func update() {
+	// TODO
+	checkRoot()
 }
 
-func query(s string){
+func query(s string) {
   buildscripts := "/usr/local/shade/main/packages"
   files, err := os.ReadDir(buildscripts)
   if err != nil {
@@ -74,7 +68,7 @@ func query(s string){
     scanner := bufio.NewScanner(inFile)
     for scanner.Scan() {
       line := scanner.Text()
-      if strings.Contains(line, s){
+      if strings.Contains(line, s) {
         fmt.Println(strings.Replace(line, s, fmt.Sprintf("\033[7m%s\033[0m", s), 1))
       }
     }
