@@ -4,6 +4,8 @@
 
 ### Emacs ###
 # -*- mode: gitignore; -*-
+shade-go
+
 *~
 \#*\#
 /.emacs.desktop
