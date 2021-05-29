@@ -5,6 +5,10 @@ import (
   "runtime"
 )
 
+var (
+	shadeRepo = "https://github.com/shade-linux/buildscripts/"
+	shadeDir = "/usr/local/shade/" // explicit `/` at the end is crucial
+)
 
 func main() {
   if !(runtime.GOOS == "darwin" || runtime.GOOS == "linux") {
