@@ -16,18 +16,43 @@ func help(){
 }
 
 func setup()  {
+  if !(isRoot()){
+    error("Shade must be run as a root user")
+    os.Exit(0)
+  }
+
 }
 
 func install(s []string){
+  if !(isRoot()){
+    error("Shade must be run as a root user")
+    os.Exit(0)
+  }
+
 }
 
 func uninstall(s []string){
+  if !(isRoot()){
+    error("Shade must be run as a root user")
+    os.Exit(0)
+  }
+
 }
 
 func upgrade(s []string){
+  if !(isRoot()){
+    error("Shade must be run as a root user")
+    os.Exit(0)
+  }
+
 }
 
 func update(){
+  if !(isRoot()){
+    error("Shade must be run as a root user")
+    os.Exit(0)
+  }
+
 }
 
 func query(s string){

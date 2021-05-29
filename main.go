@@ -26,10 +26,6 @@ func main() {
     os.Exit(0)
   }
 
-  if !(isRoot()){
-    error("Shade must be run as a root user")
-    os.Exit(0)
-  }
 
   packages := os.Args[2:]
   subcommand := os.Args[1]
