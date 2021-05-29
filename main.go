@@ -19,6 +19,10 @@ func err(s ...string)  {
   fmt.Printf("\033[31m%s\033[0m", strings.Join(s, " "))
 }
 
+func info(s ...string)  {
+  fmt.Printf("\033[34m%s\033[0m", strings.Join(s, " "))
+}
+
 func main() {
   if !(runtime.GOOS == "darwin" || runtime.GOOS == "linux") {
     err("Shade supports only linux and macOSX")
