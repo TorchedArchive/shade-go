@@ -1,2 +1,3 @@
 # shade-go
-Shade package manager written in golang
+
+Rewrite of the [Shade package manager](https://www.github.com/shade-linux/shade) in Go
