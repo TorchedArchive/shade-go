@@ -32,11 +32,6 @@ func install(s []string) {
 	checkRoot()
 }
 
-func install(s []string) {
-	// TODO
-	checkRoot()
-}
-
 func uninstall(s []string) {
 	// TODO
 	checkRoot()
